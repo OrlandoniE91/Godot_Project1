@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54k6nufr6lc0"]
+
+[ext_resource type="Texture2D" uid="uid://ci55iy8fh3pnc" path="res://Sprites/08-Box/Idle.png" id="1_8udnn"]
+[ext_resource type="Texture2D" uid="uid://c1vlswosq7mgg" path="res://Sprites/08-Box/Hit.png" id="1_kiokr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cu8eh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kiokr")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8udnn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osv3i"]
+size = Vector2(19, 14)
+
+[node name="Box" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cu8eh")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_osv3i")

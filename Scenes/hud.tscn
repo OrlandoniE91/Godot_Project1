@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://r20akcku1862"]
+
+[ext_resource type="Texture2D" uid="uid://brgj7ycnh84sq" path="res://Sprites/12-Live and Coins/Live Bar.png" id="1_bde0x"]
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_vs30g"]
+[ext_resource type="Texture2D" uid="uid://cprvodswtfkjy" path="res://Sprites/12-Live and Coins/Small Diamond (18x14).png" id="2_lm5ym"]
+[ext_resource type="PackedScene" uid="uid://dxsyyxm63egup" path="res://Scenes/life.tscn" id="4_li4wc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohe34"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8eaa"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(18, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo123"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(36, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vey50"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(54, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7bil"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(72, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twdwp"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(90, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58fmg"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(108, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8geio"]
+atlas = ExtResource("2_lm5ym")
+region = Rect2(126, 0, 18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrqt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohe34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8eaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo123")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vey50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7bil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twdwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58fmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8geio")
+}],
+"loop": true,
+"name": &"score",
+"speed": 10.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_vs30g")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 93.0
+offset_right = 160.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(96, 56)
+scale = Vector2(2, 2)
+texture = ExtResource("1_bde0x")
+
+[node name="DiamondIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(80, 112)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qrqt1")
+animation = &"score"
+autoplay = "score"
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Life" parent="Lives" instance=ExtResource("4_li4wc")]
+position = Vector2(70, 56)
+scale = Vector2(2.21429, 2.21429)
+
+[node name="Life2" parent="Lives" instance=ExtResource("4_li4wc")]
+position = Vector2(92, 56)
+scale = Vector2(2.21429, 2.21429)
+
+[node name="Life3" parent="Lives" instance=ExtResource("4_li4wc")]
+position = Vector2(114, 56)
+scale = Vector2(2.21429, 2.21429)

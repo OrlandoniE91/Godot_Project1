@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://dxsyyxm63egup"]
+
+[ext_resource type="Texture2D" uid="uid://bdrpigb7vuf45" path="res://Sprites/12-Live and Coins/Small Heart Idle (18x14).png" id="1_4nmt2"]
+[ext_resource type="Texture2D" uid="uid://dpb3xebjcy1fd" path="res://Sprites/12-Live and Coins/Small Heart Hit (18x14).png" id="1_n80qt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6agx2"]
+atlas = ExtResource("1_n80qt")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyrxa"]
+atlas = ExtResource("1_n80qt")
+region = Rect2(18, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62dd8"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvkff"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(18, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55kqm"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(36, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flvdm"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(54, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnksg"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(72, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1373"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(90, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0voy"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(108, 0, 18, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlo4l"]
+atlas = ExtResource("1_4nmt2")
+region = Rect2(126, 0, 18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cs64s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6agx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyrxa")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62dd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvkff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55kqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flvdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnksg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1373")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0voy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlo4l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Life" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cs64s")
+animation = &"idle"
+autoplay = "idle"
